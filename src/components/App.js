@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <NewTaskForm onAddItem={handleAddItem} />
-      <TodosContainer data={data} />
+      <TodosContainer data={data} setData={setData} />
     </div>
   );
 }
