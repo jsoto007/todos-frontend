@@ -2,19 +2,19 @@ import React from 'react';
 
 
 function TododsCard( { item, data, onDeleteItem } ) {
-    const {id, name, tasks} = item
+    const {id, name, tasks, updated_at} = item
 
     function handleDeleteClick() {
         fetch(`http://localhost:9292/categories/${id}`,
         {
             method: "DELETE",
         })
-        .then((resp) => resp.json)
-        .then(() => onDeleteItem(data))
+        
+        onDeleteItem(id);
     }
 
     return (
-        <div>
+        <div key={id}>
             <ul>
                 <li>{name}</li>
                 {tasks.map((item) => <li>{item.description}</li>)}

@@ -19,7 +19,7 @@ function NewTaskForm( onAddItem ) {
          body: JSON.stringify(formData),
       })
       .then((resp) => resp.json())
-      .then((newItem) => {onAddItem(newItem)})
+      .then((newItem) => onAddItem(newItem))
   }
 
   function handleChange(e) {

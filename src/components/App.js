@@ -14,7 +14,7 @@ function App() {
 
 
   function handleAddItem(newItem) {
-    setData({...data, newItem})
+    setData([...data, newItem])
   }
 
   return (
