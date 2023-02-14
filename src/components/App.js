@@ -16,7 +16,7 @@ function App() {
   function handleAddItem(newItem) {
    setData([...data, newItem]);
   }
-
+console.log(data,"data")
   return (
     <div className="App">
       <NewTaskForm onAddTask={handleAddItem} />

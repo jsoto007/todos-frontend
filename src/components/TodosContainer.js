@@ -8,12 +8,19 @@ function TodosContainer ( { data, setData } ) {
         setData(updatedItems)
     }
 
+    function handleDeleteTask(id) {
+       const task = data.tasks
+        const updatedItems = task.filter((item) => item.id !== id)
+        setData(updatedItems)
+    }
+
     return (
         <div>
             {data.map((item) => {
                 return (
                     <TododsCard 
                         onDeleteItem={handleDeleteItem}
+                        onDeleteTask={handleDeleteTask}
                         key={item.id}
                         item={item}
                     />

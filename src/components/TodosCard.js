@@ -1,8 +1,8 @@
 import React from 'react';
+import TasksCard from './TasksCard';
 
-
-function TododsCard( { item, data, onDeleteItem } ) {
-    const {id, name, tasks, updated_at} = item
+function TododsCard( { item, data, onDeleteItem, onDeleteTask } ) {
+    const {id, name, tasks} = item
 
     function handleDeleteClick() {
         fetch(`http://localhost:9292/categories/${id}`,
@@ -14,7 +14,7 @@ function TododsCard( { item, data, onDeleteItem } ) {
     }
 
     return (
-        <div key={id}>
+        <div>
             <ul>
                 <li>{name} 
                 
@@ -26,7 +26,13 @@ function TododsCard( { item, data, onDeleteItem } ) {
                   </span>
                 </button>
                 </li>
-                {/* {tasks.map((item) => <li>{item.description}</li>)} */}
+                {tasks.map((item) =>{
+                    return (
+                        <TasksCard item={item} onDeleteTask={onDeleteTask} />
+                    )
+                } )}
+
+               
             </ul>
         </div>
     )
