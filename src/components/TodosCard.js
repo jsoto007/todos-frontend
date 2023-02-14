@@ -2,12 +2,13 @@ import React from 'react';
 
 
 function TododsCard( { item } ) {
-
-    console.log(item)
+    const {id, name, tasks} = item
+    console.log(tasks)
     return (
         <div>
             <ul>
-                <li>{item.name}</li>
+                <li>{name}</li>
+               
             </ul>
         </div>
     )
