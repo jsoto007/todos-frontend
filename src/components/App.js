@@ -14,12 +14,12 @@ function App() {
 
 
   function handleAddItem(newItem) {
-    setData([...data, newItem])
+   setData([...data, newItem]);
   }
 
   return (
     <div className="App">
-      <NewTaskForm onAddItem={handleAddItem} />
+      <NewTaskForm onAddTask={handleAddItem} />
       <TodosContainer data={data} setData={setData} />
     </div>
   );

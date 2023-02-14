@@ -16,15 +16,17 @@ function TododsCard( { item, data, onDeleteItem } ) {
     return (
         <div key={id}>
             <ul>
-                <li>{name}</li>
-                {tasks.map((item) => <li>{item.description}</li>)}
+                <li>{name} 
+                
                 <button onClick={handleDeleteClick}>
-                <span 
+                    <span 
                   area-aria-labelledby="Delete"
                   role="img">
                   🗑️
                   </span>
                 </button>
+                </li>
+                {/* {tasks.map((item) => <li>{item.description}</li>)} */}
             </ul>
         </div>
     )

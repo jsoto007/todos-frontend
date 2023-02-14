@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-function NewTaskForm( onAddItem ) {
+function NewTaskForm( { onAddTask } ) {
   const [formData, setFormData] = useState({
     name: "",
     description: "", 
@@ -19,7 +19,10 @@ function NewTaskForm( onAddItem ) {
          body: JSON.stringify(formData),
       })
       .then((resp) => resp.json())
-      .then((newItem) => onAddItem(newItem))
+      .then((newItem) => {
+        onAddTask(newItem)
+  
+      });
   }
 
   function handleChange(e) {
