@@ -4,8 +4,9 @@ import TododsCard from "./TodosCard";
 function TodosContainer ( { data, setData } ) {
 
     function handleDeleteItem(deletedItem) {
-        const updatedItems = data.filter((item) => item.id !== deletedItem.id)
-        setData(updatedItems)
+        console.log(deletedItem)
+        // const updatedItems = data.filter((item) => item.id !== deletedItem.id)
+        // setData(updatedItems)
     }
 
     return (

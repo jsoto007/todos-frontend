@@ -12,11 +12,19 @@ function TododsCard( { item, data, onDeleteItem } ) {
         .then((resp) => resp.json)
         .then(() => onDeleteItem(data))
     }
+
     return (
         <div>
             <ul>
                 <li>{name}</li>
-               
+                {tasks.map((item) => <li>{item.description}</li>)}
+                <button onClick={handleDeleteClick}>
+                <span 
+                  area-aria-labelledby="Delete"
+                  role="img">
+                  🗑️
+                  </span>
+                </button>
             </ul>
         </div>
     )
